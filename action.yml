@@ -1,11 +1,13 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Wait for other action'
+description: 'Simple action to wait for other action'
+author: 'Nathan Firmo'
 inputs:
-  milliseconds: # change this
+  token:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'Your GitHub token'
+  microservice:
+    required: true
+    description: 'File name of the microservice you wanna wait for'
 runs:
   using: 'node16'
   main: 'dist/index.js'

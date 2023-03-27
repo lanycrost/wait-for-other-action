@@ -1,0 +1,17 @@
+name: Sample Workflow
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+         token: ${{ secrets.REPO_SCOPED_TOKEN }}
+
+      - name: Wait 
+        run: |
+          sleep 60
