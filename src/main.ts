@@ -1,5 +1,4 @@
 import * as core from '@actions/core'
-import { wait } from './wait'
 import { Octokit } from '@octokit/rest'
 import github from '@actions/github'
 
@@ -10,7 +9,7 @@ async function run(): Promise<void> {
     let workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
 
     while (workflowIsRunning) {
-      await wait(3000)
+      await new Promise(resolve => setTimeout(resolve, 3000))
       workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
     }
   } catch (error) {
