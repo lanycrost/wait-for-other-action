@@ -61,7 +61,7 @@ run();
 function checkIfWorkflowIsRunning(workflow) {
     return __awaiter(this, void 0, void 0, function* () {
         const token = core.getInput('token');
-        const { context } = github_1.default;
+        const context = github_1.default.context;
         const octokit = new rest_1.Octokit({
             auth: token
         });
