@@ -34,13 +34,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(2186));
+const github = __importStar(__nccwpck_require__(5438));
 const rest_1 = __nccwpck_require__(5375);
-const github_1 = __importDefault(__nccwpck_require__(5438));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -61,7 +58,7 @@ run();
 function checkIfWorkflowIsRunning(workflow) {
     return __awaiter(this, void 0, void 0, function* () {
         const token = core.getInput('token');
-        const context = github_1.default.context;
+        const { context } = github;
         const octokit = new rest_1.Octokit({
             auth: token
         });

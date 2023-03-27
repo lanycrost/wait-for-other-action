@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
+import * as github from '@actions/github'
 import { Octokit } from '@octokit/rest'
-import github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
@@ -22,7 +22,7 @@ run()
 async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
   const token: string = core.getInput('token')
 
-  const context = github.context
+  const { context } = github
 
   const octokit = new Octokit({
     auth: token
