@@ -22,7 +22,7 @@ run()
 async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
   const token: string = core.getInput('token')
 
-  const { context } = github
+  const context = github.context
 
   const octokit = new Octokit({
     auth: token
