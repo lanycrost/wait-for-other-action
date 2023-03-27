@@ -5,7 +5,7 @@ inputs:
   token:
     required: true
     description: 'Your GitHub token'
-  microservice:
+  workflow:
     required: true
     description: 'File name of the microservice you wanna wait for'
 runs:
