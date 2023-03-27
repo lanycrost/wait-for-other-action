@@ -19,7 +19,7 @@ async function run(): Promise<void> {
 
 run()
 
-async function checkIfWorkflowIsRunning(workflow: string) {
+async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
   const token: string = core.getInput('token')
 
   const { context } = github
