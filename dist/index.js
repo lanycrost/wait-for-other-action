@@ -46,6 +46,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const workflow = core.getInput('workflow');
+            core.info(`Waiting until ${workflow} finish`);
             let workflowIsRunning = yield checkIfWorkflowIsRunning(workflow);
             while (workflowIsRunning) {
                 yield new Promise(resolve => setTimeout(resolve, 3000));
