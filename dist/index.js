@@ -49,7 +49,7 @@ function run() {
             trimWhitespace: true
         });
         try {
-            core.info(`Waiting until ${workflow} finish`);
+            core.info(`Waiting until workflow ${workflow} ends`);
             let workflowIsRunning;
             do {
                 yield new Promise(resolve => setTimeout(resolve, 3000));

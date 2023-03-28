@@ -9,7 +9,7 @@ async function run(): Promise<void> {
   })
 
   try {
-    core.info(`Waiting until ${workflow} finish`)
+    core.info(`Waiting until workflow ${workflow} ends`)
 
     let workflowIsRunning
     do {
