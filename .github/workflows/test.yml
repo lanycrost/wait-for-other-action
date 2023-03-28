@@ -12,6 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version: 16.x
+
       - name: Install dependencies
         run: npm ci
 
@@ -24,7 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./
+
+      - name: Run action
+        uses: ./
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           workflow: 'sample-workflow.yml'
