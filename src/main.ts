@@ -4,7 +4,7 @@ import { Octokit } from '@octokit/rest'
 
 async function run(): Promise<void> {
   try {
-    const workflow: string = core.getInput('token')
+    const workflow: string = core.getInput('workflow')
 
     let workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
 
