@@ -16,4 +16,4 @@ jobs:
 
       - name: Wait 
         run: |
-          sleep 60
+          sleep 30
