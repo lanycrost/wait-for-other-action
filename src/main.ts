@@ -3,7 +3,11 @@ import * as github from '@actions/github'
 import { Octokit } from '@octokit/rest'
 
 async function run(): Promise<void> {
-  const workflow: string = core.getInput('workflow')
+  const workflow: string = core.getInput('workflow', {
+    required: true,
+    trimWhitespace: true
+  })
+
   try {
     core.info(`Waiting until ${workflow} finish`)
 
@@ -17,7 +21,7 @@ async function run(): Promise<void> {
     if (error instanceof Error) {
       if (error.message === 'Not Found') {
         core.error(
-          `It seems the ${workflow} doesn't exist in current repo. Are this filename correct?`
+          `It seems the workflow "${workflow}" doesn't exist in current repo. Are this filename correct?`
         )
       }
       core.setFailed(error.message)
@@ -28,7 +32,10 @@ async function run(): Promise<void> {
 run()
 
 async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
-  const token: string = core.getInput('token')
+  const token: string = core.getInput('token', {
+    required: true,
+    trimWhitespace: true
+  })
 
   const { context } = github
 
