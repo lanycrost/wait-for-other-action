@@ -1,0 +1,19 @@
+name: Sample Workflow
+
+on:
+  push:
+    branches: ['main']
+
+run-name: Sampe Workflow
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+         token: ${{ secrets.GITHUB_TOKEN  }}
+
+      - name: Wait 
+        run: |
+          sleep 60
