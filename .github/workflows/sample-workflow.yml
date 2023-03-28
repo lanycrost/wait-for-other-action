@@ -4,6 +4,8 @@ on:
   push:
     branches: ['main']
 
+run-name: Sampe Workflow
+
 jobs:
   test:
     runs-on: ubuntu-latest

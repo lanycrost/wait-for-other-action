@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/NathanFirmo/wait-for-other-action.git"
   },
   "keywords": [
     "actions",
     "node",
     "setup"
   ],
-  "author": "",
+  "author": "Nathan Firmo",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0",
