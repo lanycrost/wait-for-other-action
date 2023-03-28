@@ -7,7 +7,7 @@ inputs:
     description: 'Your GitHub token'
   workflow:
     required: true
-    description: 'File name of the microservice you wanna wait for'
+    description: 'File name of the workflow you wanna wait for'
 runs:
   using: 'node16'
   main: 'dist/index.js'
