@@ -25,13 +25,19 @@ jobs:
           npm run build
           npm run package
 
-  test: # make sure the action works on a clean machine without building
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Run action
+      - name: Run my action
         uses: ./
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           workflow: 'sample-workflow.yml'
+
+  # test: # make sure the action works on a clean machine without building
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+
+  #     - name: Run action
+  #       uses: ./
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
+  #         workflow: 'sample-workflow.yml'
