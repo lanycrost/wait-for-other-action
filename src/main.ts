@@ -6,6 +6,8 @@ async function run(): Promise<void> {
   try {
     const workflow: string = core.getInput('workflow')
 
+    core.info(`Waiting until ${workflow} finish`)
+
     let workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
 
     while (workflowIsRunning) {
