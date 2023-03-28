@@ -33,6 +33,5 @@ jobs:
       - name: Run action
         uses: ./
         with:
-          # token: ${{ secrets.GITHUB_TOKEN }}
-          # workflow: 'sample-workflow.yml'
-          milliseconds: 1000
+          token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: 'sample-workflow.yml'
