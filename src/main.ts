@@ -11,12 +11,11 @@ async function run(): Promise<void> {
   try {
     core.info(`Waiting until ${workflow} finish`)
 
-    let workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
-
-    while (workflowIsRunning) {
+    let workflowIsRunning
+    do {
       await new Promise(resolve => setTimeout(resolve, 3000))
       workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
-    }
+    } while (workflowIsRunning)
   } catch (error) {
     if (error instanceof Error) {
       if (error.message === 'Not Found') {

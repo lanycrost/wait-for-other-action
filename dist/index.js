@@ -50,11 +50,11 @@ function run() {
         });
         try {
             core.info(`Waiting until ${workflow} finish`);
-            let workflowIsRunning = yield checkIfWorkflowIsRunning(workflow);
-            while (workflowIsRunning) {
+            let workflowIsRunning;
+            do {
                 yield new Promise(resolve => setTimeout(resolve, 3000));
                 workflowIsRunning = yield checkIfWorkflowIsRunning(workflow);
-            }
+            } while (workflowIsRunning);
         }
         catch (error) {
             if (error instanceof Error) {
