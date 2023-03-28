@@ -1,6 +1,15 @@
+<div align=center>
+
 # Wait for other action
 
-This action provides a simple way to wait for a specific workflow to complete. 
+![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)
+![version](https://img.shields.io/github/package-json/v/NathanFirmo/wait-for-other-action)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+[![build-test](https://github.com/NathanFirmo/wait-for-other-action/actions/workflows/test.yml/badge.svg)](https://github.com/NathanFirmo/wait-for-other-action/actions/workflows/test.yml)
+
+This action provides a simple way to wait for a specific workflow to complete
+
+</div>
 
 ## Usage
 
