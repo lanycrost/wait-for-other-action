@@ -44,8 +44,8 @@ const github = __importStar(__nccwpck_require__(5438));
 const rest_1 = __nccwpck_require__(5375);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
+        const workflow = core.getInput('workflow');
         try {
-            const workflow = core.getInput('workflow');
             core.info(`Waiting until ${workflow} finish`);
             let workflowIsRunning = yield checkIfWorkflowIsRunning(workflow);
             while (workflowIsRunning) {
@@ -54,8 +54,12 @@ function run() {
             }
         }
         catch (error) {
-            if (error instanceof Error)
+            if (error instanceof Error) {
+                if (error.message === 'Not Found') {
+                    core.error(`It seems the ${workflow} doesn't exist in current repo. Are this filename correct?`);
+                }
                 core.setFailed(error.message);
+            }
         }
     });
 }
