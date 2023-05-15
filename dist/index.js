@@ -77,6 +77,13 @@ function checkIfWorkflowIsRunning(workflow) {
         const octokit = new rest_1.Octokit({
             auth: token
         });
+        console.log(yield octokit.actions.listWorkflowRuns({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            workflow_id: workflow,
+            per_page: 1,
+            status: 'in_progress'
+        }));
         const { data: { total_count } } = yield octokit.actions.listWorkflowRuns({
             owner: context.repo.owner,
             repo: context.repo.repo,

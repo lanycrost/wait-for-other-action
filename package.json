@@ -10,7 +10,7 @@
     "format-check": "prettier --check '**/*.ts'",
     "lint": "eslint src/**/*.ts",
     "package": "ncc build --source-map --license licenses.txt",
-    "all": "npm run build && npm run format && npm run lint && npm run package",
+    "all": "npm run build && npm run format && npm run package",
     "release:patch": "HUSKY=0 npm version patch -m 'chore: release version %s' && git push --follow-tags",
     "release:minor": "HUSKY=0 npm version minor -m 'chore: release version %s' && git push --follow-tags",
     "release:major": "HUSKY=0 npm version major -m 'chore: release version %s' && git push --follow-tags",

@@ -42,6 +42,16 @@ async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
     auth: token
   })
 
+  console.log(
+    await octokit.actions.listWorkflowRuns({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      workflow_id: workflow,
+      per_page: 1,
+      status: 'in_progress'
+    })
+  )
+
   const {
     data: { total_count }
   } = await octokit.actions.listWorkflowRuns({
