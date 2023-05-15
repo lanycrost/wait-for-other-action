@@ -89,7 +89,6 @@ function checkIfWorkflowIsRunning(workflow) {
             repo: context.repo.repo,
             workflow_id: workflow,
             per_page: 1,
-            status: 'in_progress'
         });
         return total_count !== 0;
     });
