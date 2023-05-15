@@ -77,19 +77,13 @@ function checkIfWorkflowIsRunning(workflow) {
         const octokit = new rest_1.Octokit({
             auth: token
         });
-        console.dir(yield octokit.actions.listWorkflowRuns({
+        const { data: { workflow_runs } } = yield octokit.actions.listWorkflowRuns({
             owner: context.repo.owner,
             repo: context.repo.repo,
             workflow_id: workflow,
-            per_page: 1
-        }), { depth: null });
-        const { data: { total_count } } = yield octokit.actions.listWorkflowRuns({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            workflow_id: workflow,
-            per_page: 1
+            per_page: 5
         });
-        return total_count !== 0;
+        return workflow_runs.some(run => run.status === 'queued' || run.status === 'in_progress');
     });
 }
 
