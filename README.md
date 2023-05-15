@@ -15,7 +15,7 @@ This action provides a simple way to wait for a specific workflow to complete
 
 ~~~yml
 - name: Wait 
-  uses: NathanFirmo/wait-for-other-action@v1
+  uses: NathanFirmo/wait-for-other-action@v1.0.4
   with:
     token: ${{ secrets.GITHUB_TOKEN }}
     workflow: 'workflow-filename.yml'
