@@ -51,5 +51,7 @@ async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
     per_page: 5
   })
 
-  return workflow_runs.some(run => run.status === 'queued' || run.status === 'in_progress')
+  return workflow_runs.some(
+    run => run.status === 'queued' || run.status === 'in_progress'
+  )
 }
