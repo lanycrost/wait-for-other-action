@@ -48,7 +48,6 @@ async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
       repo: context.repo.repo,
       workflow_id: workflow,
       per_page: 1,
-      status: 'in_progress'
     })
   )
 
@@ -58,7 +57,7 @@ async function checkIfWorkflowIsRunning(workflow: string): Promise<boolean> {
     owner: context.repo.owner,
     repo: context.repo.repo,
     workflow_id: workflow,
-    per_page: 1,
+    per_page: 1
   })
 
   return total_count !== 0
