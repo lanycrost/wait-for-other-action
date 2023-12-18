@@ -30,3 +30,4 @@ The following inputs are required to use this action:
 | --- | --- |
 | `token` | Your GitHub token. See more in [GitHub Docs](https://docs.github.com/en/actions/security-guides/automatic-token-authentication). |
 | `workflow` | File name of the workflow you wanna wait for. |
+| `interval` | The interval between workflow checks (default is 3s) |

@@ -8,12 +8,14 @@ async function run(): Promise<void> {
     trimWhitespace: true
   })
 
+  const interval: number = +core.getInput('interval') * 1000 || 3000
+
   try {
     core.info(`Waiting until workflow ${workflow} ends`)
 
     let workflowIsRunning
     do {
-      await new Promise(resolve => setTimeout(resolve, 3000))
+      await new Promise(resolve => setTimeout(resolve, interval))
       workflowIsRunning = await checkIfWorkflowIsRunning(workflow)
     } while (workflowIsRunning)
   } catch (error) {

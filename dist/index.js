@@ -48,11 +48,12 @@ function run() {
             required: true,
             trimWhitespace: true
         });
+        const interval = +core.getInput('interval') * 1000 || 3000;
         try {
             core.info(`Waiting until workflow ${workflow} ends`);
             let workflowIsRunning;
             do {
-                yield new Promise(resolve => setTimeout(resolve, 3000));
+                yield new Promise(resolve => setTimeout(resolve, interval));
                 workflowIsRunning = yield checkIfWorkflowIsRunning(workflow);
             } while (workflowIsRunning);
         }

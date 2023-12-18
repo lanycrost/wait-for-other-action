@@ -8,6 +8,8 @@ inputs:
   workflow:
     required: true
     description: 'File name of the workflow you wanna wait for'
+  interval:
+    description: 'The interval between workflow checks (default is 3s)'
 runs:
   using: 'node16'
   main: 'dist/index.js'
