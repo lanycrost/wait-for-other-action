@@ -1,4 +1,4 @@
-name: 'Wait for other action'
+name: 'Wait for other workflows'
 description: 'Simple action to wait for other action'
 author: 'Khachatur Ashotyan'
 inputs:
