@@ -1,6 +1,6 @@
 name: 'Wait for other action'
 description: 'Simple action to wait for other action'
-author: 'Nathan Firmo'
+author: 'Khachatur Ashotyan'
 inputs:
   token:
     required: true
